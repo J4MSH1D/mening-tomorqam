@@ -41,8 +41,16 @@ export default defineNuxtConfig({
   },
 
   i18n: {
-    locales: ["fr", "en"],
-    defaultLocale: "en",
+    locales: [
+      { code: "eng", name: "English", file: "en.js" },
+      { code: "ru", name: "Russian", file: "ru.js" },
+      { code: "uz", name: "Uzbek", file: "uz.js" },
+      { code: "cyrl", name: "Cyrl", file: "cyrl.js" },
+    ],
+    defaultLocale: "ru",
     vueI18n: "./i18n.config.ts", // if you are using custom path, default
+    langDir: "locales",
+    detectBrowserLanguage: false,
+    lazy: true,
   },
 });

@@ -4,10 +4,14 @@
 </script>
 <template>
   <div class="container mx-auto">
-    <button @click="setLocale('en')">en</button>
-    <button @click="setLocale('fr')">fr</button>
+    <div class="flex gap-3">
+      <button @click="setLocale('eng')">eng</button>
+      <button @click="setLocale('ru')">ru</button>
+      <button @click="setLocale('uz')">uz</button>
+      <button @click="setLocale('cyrl')">cyrl</button>
+    </div>
     <div>
-      {{ $t("welcome") }}
+      {{ $t("Создать") }}
     </div>
     <pre v-if="data">
         {{ data }}
