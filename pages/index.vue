@@ -1,3 +1,16 @@
+<script setup>
+  const { setLocale } = useI18n();
+  const localePath = useLocalePath();
+</script>
 <template>
-  <div>Login</div>
+  <div class="container mx-auto">
+    <button @click="setLocale('en')">en</button>
+    <button @click="setLocale('fr')">fr</button>
+    <div>
+      {{ $t("welcome") }}
+    </div>
+    <div>
+      <NuxtLink :to="localePath('/login')">Move to: Login</NuxtLink>
+    </div>
+  </div>
 </template>

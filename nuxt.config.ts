@@ -2,6 +2,10 @@
 export default defineNuxtConfig({
   compatibilityDate: "2024-11-01",
   devtools: { enabled: true },
+  // Modules
+  modules: ["@nuxtjs/tailwindcss", "@nuxtjs/i18n"],
+
+  // Components
   components: {
     dirs: [
       {
@@ -11,12 +15,15 @@ export default defineNuxtConfig({
       "~/components",
     ],
   },
-  modules: ["@nuxtjs/tailwindcss", "@nuxtjs/i18n"],
+
+  // App config
   app: {
     head: {
       title: "Mening tomorqam",
     },
   },
+
+  // Runtime Proxy config
   routeRules: {
     "/main/**": {
       proxy: {
@@ -24,5 +31,11 @@ export default defineNuxtConfig({
         headers: { "ngrok-skip-browser-warning": "69420" },
       },
     },
+  },
+
+  i18n: {
+    locales: ["fr", "en"],
+    defaultLocale: "en",
+    vueI18n: "./i18n.config.ts", // if you are using custom path, default
   },
 });
