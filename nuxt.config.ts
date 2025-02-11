@@ -1,5 +1,8 @@
 export default defineNuxtConfig({
+  // Compability date
   compatibilityDate: "2024-11-01",
+
+  // Devtools
   devtools: { enabled: true },
 
   // Runtime config
@@ -10,16 +13,28 @@ export default defineNuxtConfig({
   },
 
   // Modules
-  modules: ["@nuxtjs/tailwindcss", "@nuxtjs/i18n"],
+  modules: ["@nuxtjs/tailwindcss", "@nuxtjs/i18n", "@ant-design-vue/nuxt"],
 
   // Components
   components: {
     dirs: [
+      // With prefixes
+      {
+        path: "~/components/default",
+        prefix: "Default",
+        global: true,
+      },
+      {
+        path: "~/components/default/home",
+        prefix: "Home",
+        global: true,
+      },
+
+      // Global
       {
         path: "~/components/global",
         global: true,
       },
-    
       "~/components",
     ],
   },
@@ -28,6 +43,12 @@ export default defineNuxtConfig({
   app: {
     head: {
       title: "Mening tomorqam",
+      link: [
+        {
+          rel: "icon",
+          href: "favicon.svg",
+        },
+      ],
     },
   },
 
@@ -41,6 +62,7 @@ export default defineNuxtConfig({
     },
   },
 
+  // i18n
   i18n: {
     locales: [
       { code: "eng", name: "English", file: "en.js" },
@@ -53,5 +75,17 @@ export default defineNuxtConfig({
     langDir: "locales",
     detectBrowserLanguage: false,
     lazy: true,
+  },
+
+  // Alias
+  alias: {
+    assets: "/<srcDir>/assets",
+    assetsSvg: "/<srcDir>/assets/images/svg",
+    assetsPng: "/<srcDir>/assets/images/png",
+  },
+
+  // TailwindCSS
+  tailwindcss: {
+    config: "/tailwind.config.ts",
   },
 });

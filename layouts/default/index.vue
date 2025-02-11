@@ -1,8 +1,9 @@
 <template>
   <div>
-    <div>Default</div>
+    <DefaultHeader />
     <div>
       <slot />
     </div>
+    <DefaultFooter />
   </div>
 </template>
