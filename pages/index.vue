@@ -9,8 +9,5 @@
     <div>
       {{ $t("welcome") }}
     </div>
-    <div>
-      <NuxtLink :to="localePath('/login')">Move to: Login</NuxtLink>
-    </div>
   </div>
 </template>
