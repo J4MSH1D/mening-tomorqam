@@ -1,9 +1,10 @@
 <script setup>
-  const { setLocale } = useI18n();
-  const { data } = await useFetch("/main/category/getall");
+const { setLocale } = useI18n();
+// const { data } = await useFetch("/main/category/getall");
 </script>
 <template>
   <div class="container mx-auto">
+    <home-header />
     <div class="flex gap-3">
       <button @click="setLocale('eng')">eng</button>
       <button @click="setLocale('ru')">ru</button>
@@ -14,7 +15,7 @@
       {{ $t("Создать") }}
     </div>
     <pre v-if="data">
-        {{ data }}
+        <!-- {{ data }} -->
     </pre>
   </div>
 </template>
