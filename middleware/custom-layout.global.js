@@ -1,7 +1,6 @@
 export default defineNuxtRouteMiddleware((to) => {
   const layouts = {
     auth: ["login"],
-    dashboard: [],
   };
 
   const layoutName = Object.entries(layouts).find(([layoutName, list]) =>

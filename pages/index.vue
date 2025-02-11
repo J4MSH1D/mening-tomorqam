@@ -1,6 +1,6 @@
 <script setup>
   const { setLocale } = useI18n();
-  const localePath = useLocalePath();
+  const { data } = await useFetch("/main/category/getall");
 </script>
 <template>
   <div class="container mx-auto">
@@ -9,5 +9,8 @@
     <div>
       {{ $t("welcome") }}
     </div>
+    <pre v-if="data">
+        {{ data }}
+    </pre>
   </div>
 </template>
