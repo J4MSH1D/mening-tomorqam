@@ -10,6 +10,15 @@ export default defineNuxtConfig({
   },
 
   // Modules
+  components: {
+    dirs: [
+      {
+        path: "~/components/global",
+        global: true,
+      },
+      "~/components",
+    ],
+  },
   modules: ["@nuxtjs/tailwindcss", "@nuxtjs/i18n"],
 
   // Components
