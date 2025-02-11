@@ -13,3 +13,4 @@
         {{ data }}
     </pre>
   </div>
+</template>
