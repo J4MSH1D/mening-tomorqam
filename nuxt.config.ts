@@ -19,10 +19,7 @@ export default defineNuxtConfig({
         path: "~/components/global",
         global: true,
       },
-      {
-        path: "~/components/default/home",
-        prefix: "home",
-      },
+    
       "~/components",
     ],
   },
