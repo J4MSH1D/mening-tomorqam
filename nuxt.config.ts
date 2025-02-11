@@ -1,4 +1,6 @@
-// https://nuxt.com/docs/api/configuration/nuxt-config
+import { config } from "dotenv";
+config({ path: ".env.local" });
+
 export default defineNuxtConfig({
   compatibilityDate: "2024-11-01",
   devtools: { enabled: true },
@@ -11,7 +13,7 @@ export default defineNuxtConfig({
   routeRules: {
     "/main/**": {
       proxy: {
-        to: "https://4ec1-93-188-80-228.ngrok-free.app/**",
+        to: `${process.env.NUXT_BASE_URL}/**`,
         headers: { "ngrok-skip-browser-warning": "69420" },
       },
     },
