@@ -66,7 +66,7 @@ const mediaList = [
       :navigation="{ nextEl: '.mediaList-button-next', prevEl: '.mediaList-button-prev' }"
       class="mt-5"
     >
-      <swiper-slide v-for="item in mediaList" :key="item.id" class="media-list-item !h-[350px] bg-red-500 rounded-xl overflow-hidden my-5">
+      <swiper-slide v-for="item in mediaList" :key="item.id" class="media-list-item !h-[350px] bg-white rounded-xl overflow-hidden my-5">
         <a :href="item.link" target="_blank" class="flex flex-col h-full hover:(shadow-2xl)">
           <!-- media-img -->
           <div class="relative h-[200px]">
@@ -78,7 +78,7 @@ const mediaList = [
             />
           </div>
           <!-- media-content -->
-          <div class="flex flex-grow bg-yellow-500 flex-col justify-between gap-5 p-4">
+          <div class="flex flex-grow flex-col justify-between gap-5 p-4">
             <p class="text-md text-zinc-900 line-clamp-3">{{ $t(item.title) }}</p>
             <span class="text-xs text-zinc-500">{{ item.date }}</span>
           </div>

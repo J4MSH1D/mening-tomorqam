@@ -29,6 +29,11 @@ export default defineNuxtConfig({
         prefix: "Products",
         global: true,
       },
+      {
+        path: "~/components/default/government-supply",
+        prefix: "GovernmentSupply",
+        global: true,
+      },
 
       // Global
       {
@@ -90,5 +95,4 @@ export default defineNuxtConfig({
   },
 
   // SVGO
-
 });

@@ -122,9 +122,9 @@ const productsList = [
     >
       <swiper-slide v-for="item in productsList" :key="item.id" class="list-item max-w-[220px] bg-white rounded-xl p-4 my-4">
         <!-- image -->
-        <router-link to="" class="block border border-gray-200 aspect-square bg-gray-200">
+        <nuxt-link to="" class="block border border-gray-200 aspect-square bg-gray-200">
           <img :src="item.image" :alt="item.title" class="w-full h-full object-contain" />
-        </router-link>
+        </nuxt-link>
         <!-- title -->
         <router-link to="" class="text-sm text-zinc-900 line-clamp-2 mt-4 h-10">{{ $t(item.title) }}</router-link>
         <!-- product_type -->

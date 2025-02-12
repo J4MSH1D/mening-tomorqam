@@ -1,4 +1,6 @@
 <script setup>
+import { computed } from "vue";
+
 const props = defineProps({
   backgroundColor: {
     type: String,
@@ -77,7 +79,7 @@ const boldLeafColor = computed(() => backgroundColors[props.backgroundColor]["bo
 <template>
   <div class="relative p-10 rounded-3xl overflow-hidden min-h-[300px]" :style="backgroundColorStyle">
     <!-- Banner content -->
-    <div class="relative z-10 overhi">
+    <div class="relative z-10">
       <slot />
     </div>
 
