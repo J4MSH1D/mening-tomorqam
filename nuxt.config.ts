@@ -52,6 +52,9 @@ export default defineNuxtConfig({
     },
   },
 
+  // Styles
+  css: ["~/public/styles/main.css"],
+
   // Runtime Proxy config
   routeRules: {
     "/main/**": {
