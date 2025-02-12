@@ -1,6 +1,6 @@
 <template>
   <div class="container my-10 bg-white py-10 rounded-xl grid grid-cols-2 gap-x-5 text-white">
-    <div class="px-8 py-10 rounded-4xl bg-[#3cca2f] relative">
+    <div class="px-8 py-10 rounded-3xl bg-[#3cca2f] relative">
       <div class="flex justify-between items-start relative z-10">
         <div>
           <div class="text-2xl">{{ $t("Объявления") }}</div>
@@ -16,7 +16,7 @@
       <icon name="home_banner_11" is-svg class="absolute right-0 top-0 h-full z-0" />
       <icon name="home_banner_12" is-svg class="absolute left-10 top-0 h-full z-0" />
     </div>
-    <div class="px-8 py-10 rounded-4xl bg-[#8b3bda] relative">
+    <div class="px-8 py-10 rounded-3xl bg-[#8b3bda] relative">
       <div class="flex justify-between items-start relative z-10">
         <div>
           <div class="text-2xl">{{ $t("Бесплатный поиск сотрудников") }}</div>

@@ -5,20 +5,21 @@ const props = defineProps({
   cusClass: String,
   toRouter: String,
   link: String,
+  cusDivClass: String,
 });
 </script>
 
 <template>
-  <div class="relative rounded-3xl overflow-hidden" :class="cusClass" :style="`background-color: ${color}`">
+  <div class="relative rounded-3xl overflow-hidden" :class="cusDivClass" :style="`background-color: ${color}`">
     <!-- Banner content -->
     <div class="relative z-10">
       <slot />
     </div>
-    <router-link v-if="toRouter" :to="toRouter" class="absolute right-0 bottom-0 z-10">
-      <arrowButton :color="color" cusClass="w-10 !h-12"></arrowButton>
-    </router-link>
+    <NuxtLink v-if="toRouter" :to="$localePath(toRouter)" class="absolute right-0 bottom-0 z-10">
+      <arrowButton :color="color" :cusClass="cusClass || 'w-10 !h-10'"></arrowButton>
+    </NuxtLink>
     <a v-else :href="link" target="_blank" class="absolute right-0 bottom-0 z-10">
-      <arrowButton :color="color" cusClass="w-10 !h-12"></arrowButton>
+      <arrowButton :color="color" :cusClass="cusClass || 'w-10 !h-10'"></arrowButton>
     </a>
 
     <!-- Right leaf -->

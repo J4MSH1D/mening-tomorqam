@@ -1,8 +1,6 @@
 <script setup>
 import { ref, onMounted, watch } from "vue";
 import Map from "./components/map.vue";
-import axios from "axios";
-import { useTranslation } from "i18next-vue";
 
 const selectedTypes = ref([
     {
@@ -48,14 +46,13 @@ const selectedTypes = ref([
   ]),
   selectedType = ref("https://api.siat.stat.uz/sdmx/326/table"),
   selectedYear = ref(null),
-  data = ref([]),
-  { i18next } = useTranslation();
+  data = ref([]);
 
 const years = ref([]);
 
 async function getData() {
-  const reponse = await axios.get(selectedType.value);
-  years.value = reponse.data[0]["data"].map(e => Object.keys(e)[0]);
+  const reponse = await useFetch(selectedType.value);
+  years.value = reponse.data[0]["data"].map((e) => Object.keys(e)[0]);
   selectedYear.value = years.value[0];
   data.value = reponse.data;
 }
@@ -96,9 +93,9 @@ onMounted(async () => {
       <div class="flex-grow overflow-y-auto pr-3 max-h-[400px]">
         <div v-for="item in data" class="w-full border transition bg-gray-100 hover:(shadow-xl) my-3 p-3 rounded flex justify-between items-center">
           <div>
-            {{ item[`name_${i18next.language}`] }}
+            {{ item[`name_${$i18n.locale}`] }}
           </div>
-          <div class="font-medium">{{ item.data.find(e => Object.keys(e) == selectedYear)[`${selectedYear}`] }}</div>
+          <div class="font-medium">{{ item.data.find((e) => Object.keys(e) == selectedYear)[`${selectedYear}`] }}</div>
         </div>
       </div>
     </div>
