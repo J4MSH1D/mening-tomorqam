@@ -1,20 +1,34 @@
 <script setup>
-  const props = defineProps({
-    name: {
-      type: String,
-      required: true,
-    },
-    isSvg: {
-      type: Boolean,
-      required: false,
-      default: false,
-    },
-  });
+const props = defineProps({
+  name: {
+    type: String,
+    required: true,
+  },
+  isSvg: {
+    type: Boolean,
+    required: false,
+    default: false,
+  },
+  isSvgRaw: {
+    type: Boolean,
+    required: false,
+    default: false,
+  },
+});
 
-  const pathOfImage = computed(() =>
-    props.isSvg ? `/images/svg/${props.name}.svg` : `/images/png/${props.name}`
-  );
+const svgRawPath = ref("");
+
+if (props.isSvgRaw) {
+  const res = await import(`~/public/images/svg/${props.name}.svg?raw`);
+  svgRawPath.value = res.default;
+}
+
+const pathOfImage = computed(async () => {
+  if (props.isSvg) return `/images/svg/${props.name}.svg`;
+  else return `/images/png/${props.name}`;
+});
 </script>
 <template>
-  <img :src="pathOfImage" :alt="name" />
+  <div :alt="name" v-if="isSvgRaw" v-html="svgRawPath" />
+  <img :src="pathOfImage" :alt="name" v-else />
 </template>
