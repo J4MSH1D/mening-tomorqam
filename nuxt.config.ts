@@ -39,6 +39,11 @@ export default defineNuxtConfig({
         prefix: "Leasing",
         global: true,
       },
+      {
+        path: "~/components/default/agrotechnology",
+        prefix: "Agrotechnology",
+        global: true,
+      },
 
       // Global
       {
