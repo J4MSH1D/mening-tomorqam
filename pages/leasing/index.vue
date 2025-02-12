@@ -11,10 +11,9 @@ provide("filter", filter);
 </script>
 
 <template>
-  <GovernmentSupplyMainBanner />
-  <GovernmentSupplySupportGoals />
-  <GovernmentSupplyCreditParams />
-  <GovernmentSupplyCreditList />
-  <GovernmentSupplyCreditSteps />
-  <GovernmentSupplyApplicationForm />
+  <LeasingMainBanner />
+  <LeasingSteps />
+  <LeasingCalculator />
+  <LeasingList />
+  <LeasingForm />
 </template>

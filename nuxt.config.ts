@@ -35,8 +35,8 @@ export default defineNuxtConfig({
         global: true,
       },
       {
-        path: "~/components/default/home",
-        prefix: "Home",
+        path: "~/components/default/leasing",
+        prefix: "Leasing",
         global: true,
       },
 

@@ -14,9 +14,9 @@ const props = defineProps({
     <div class="relative z-10">
       <slot />
     </div>
-    <router-link v-if="toRouter" :to="toRouter" class="absolute right-0 bottom-0 z-10">
+    <nuxt-link v-if="toRouter" :to="toRouter" class="absolute right-0 bottom-0 z-10">
       <arrowButton :color="color" cusClass="w-10 !h-12"></arrowButton>
-    </router-link>
+    </nuxt-link>
     <a v-else :href="link" target="_blank" class="absolute right-0 bottom-0 z-10">
       <arrowButton :color="color" cusClass="w-10 !h-12"></arrowButton>
     </a>

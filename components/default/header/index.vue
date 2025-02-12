@@ -3,6 +3,11 @@ import bgHeader from "~/public/images/png/bg-header.png";
 import { Vue3Marquee } from "vue3-marquee";
 import { NuxtLink } from "#components";
 import { quickLinks } from "./data/index.js";
+import regions from "~/enums/regions";
+
+const selectValue = ref("Product");
+const inputData = ref("");
+const region = ref("Все");
 
 const localePath = useLocalePath();
 </script>

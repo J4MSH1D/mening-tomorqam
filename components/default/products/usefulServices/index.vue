@@ -35,9 +35,9 @@ const services = [
         <div class="flex-grow flex flex-col justify-between gap-8 pt-4">
           <p class="text-xl font-medium line-clamp-2">{{ $t(item.title) }}</p>
           <a-button>
-            <router-link :to="item.link" class="inline-block">
+            <nuxt-link :to="item.link" class="inline-block">
               {{ $t("Смотреть") }}
-            </router-link>
+            </nuxt-link>
           </a-button>
         </div>
       </li>
