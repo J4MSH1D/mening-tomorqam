@@ -1,11 +1,6 @@
-<script setup>
-import { Banner, Useful } from "./components";
-import { ExportDev } from "../business/components";
-</script>
+<script setup></script>
+
 <template>
-  <div>
-    <Banner />
-    <ExportDev />
-    <!-- <Useful /> -->
-  </div>
+  <!-- <AgrotechnologyMainBanner />
+  <ExportDev /> -->
 </template>

@@ -4,6 +4,10 @@ defineProps({
     type: String,
     default: "#4AB75F",
   },
+  cusClass: {
+    type: String,
+    default: "!h-12 !w-12",
+  },
 });
 </script>
 <template>
@@ -14,7 +18,7 @@ defineProps({
       },
     }"
   >
-    <a-button class="bg-white flex justify-center items-center !rounded-none !rounded-tl-3xl !rounded-br-3xl !p-0" size="large">
+    <a-button class="bg-white flex justify-center items-center !rounded-none !rounded-tl-3xl !rounded-br-3xl !p-0" :class="cusClass" size="large">
       <svg width="35" height="36" viewBox="0 0 35 36" fill="none" xmlns="http://www.w3.org/2000/svg">
         <g clip-path="url(#clip0_462_898)">
           <path

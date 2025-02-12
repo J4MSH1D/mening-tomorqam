@@ -27,23 +27,17 @@ onMounted(() => {
         <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 relative">
           <div v-for="(item, index) in smallLinks" :key="index" class="relative cursor-pointer" @click.stop="handleLinks(item)">
             <bannerSmall :color="item.color" :leafColor="item.leafColor" :cusClass="item.cusClass" :toRouter="item.toRouter">
-              <div class="relative flex items-center pl-10 gap-10 h-20">
+              <div class="relative flex items-center pl-6 gap-10 h-20">
                 <p class="text-2xl relative z-10 text-white" style="text-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25)">{{ $t(item.label) }}</p>
                 <icon :name="item.image" class="h-20 absolute right-14 bottom-0" />
               </div>
             </bannerSmall>
-            <div
-              v-if="item.isSoon"
-              class="absolute top-3 left-5.5 bg-gray-300 rounded-full text-sm text-white z-10 transform -rotate-30 -translate-x-1/2 -translate-y-1/2 px-4 py-1"
-            >
-              {{ $t("Скоро") }}
-            </div>
           </div>
           <!-- Modal -->
           <Transition name="fade">
             <div
               v-if="activeLink?.children"
-              class="absolute top-full mt-4 w-full h-auto bg-white/10 z-50 rounded-2xl p-4 flex flex-col gap-2 shadow-2xl"
+              class="absolute top-full mt-4 w-full h-auto bg-white/10 z-40 rounded-2xl p-4 flex flex-col gap-2 shadow-2xl"
               style="
                 backdrop-filter: blur(40px);
                 -webkit-backdrop-filter: blur(40px);
@@ -71,7 +65,7 @@ onMounted(() => {
                   v-for="(item, index) in activeLink.children"
                   :key="index"
                   @click="handleChildren(item)"
-                  class="px-4 py-2 h-[60px] border rounded-2xl cursor-pointer text-sm hover:bg-gray-100 transition ease-linear duration-300 relative flex items-center relative"
+                  class="px-4 py-2 h-[60px] border rounded-2xl cursor-pointer text-sm hover:bg-gray-100 transition ease-linear duration-300 flex items-center relative"
                   :style="{
                     borderColor: activeLink.color,
                     backgroundColor: item.isActive ? activeLink.color : 'white',
@@ -121,8 +115,9 @@ onMounted(() => {
                   </NuxtLink>
                   <div
                     v-if="item.isSoon"
-                    class="absolute top-2 left-6 bg-gray-300 rounded-full text-sm text-white z-10 transform -rotate-20 -translate-x-[40px] -translate-y-[18px] px-1 py-[2px]"
+                    class="absolute top-2 left-7 bg-gray-300 rounded-full text-sm text-white z-10 transform -rotate-[20deg] -translate-x-[40px] -translate-y-[18px] px-3 py-[2px]"
                   >
+                    Skoro
                     {{ $t("Скоро") }}
                   </div>
                 </div>
@@ -130,18 +125,18 @@ onMounted(() => {
               <!-- /Children -->
 
               <!-- Actice Children is Children -->
-
               <div v-if="activeChildren?.children" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-5 gap-4 mt-3">
                 <div
                   v-for="(item, index) in activeChildren?.children"
                   :key="index"
                   :to="item.link"
-                  class="relative flex items-center border border-gray-300 px-5 h-[60px] rounded-full"
+                  class="relative flex items-center border px-5 py-2 rounded-2xl cursor-pointer"
+                  :style="{ borderColor: activeLink.color }"
+                  @mouseover="hoveringIndex = index"
+                  @mouseleave="hoveringIndex = null"
                 >
                   <NuxtLink
                     class="text-[#00000099] transition-colors duration-300"
-                    @mouseover="hoveringIndex = index"
-                    @mouseleave="hoveringIndex = null"
                     :to="$localePath(item.isSoon ? undefined : item.path)"
                     v-if="item.path"
                   >
@@ -154,7 +149,7 @@ onMounted(() => {
                       }"
                     >
                       {{ $t(item.name) }}
-                      <span v-if="item.isSoon" class="py-0.5 px-1 -top-2 rounded-full relative bg-[#ff4d4f] text-[10px] text-white absolute">
+                      <span v-if="item.isSoon" class="py-0.5 px-3 -top-3 rounded-full bg-[#ff4d4f] text-[10px] text-white absolute right-2">
                         Скоро
                       </span>
                     </p>
@@ -162,6 +157,8 @@ onMounted(() => {
                   <a
                     v-else
                     class="text-sm"
+                    @mouseover="hoveringIndex = index"
+                    @mouseleave="hoveringIndex = null"
                     :style="{
                       color: hoveringIndex === index ? activeLink.color : '#00000099',
                       textShadow: hoveringIndex === index ? `0px 4px 8px ${activeLink.color}` : 'none',
@@ -170,7 +167,10 @@ onMounted(() => {
                     :href="item.link"
                     target="_blank"
                   >
-                    {{ $t(item.name) }}</a
+                    {{ $t(item.name) }}
+                    <span v-if="item.isSoon" class="py-0.5 px-3 -top-3 rounded-full bg-[#ff4d4f] text-[10px] text-white absolute right-2">
+                      Скоро
+                    </span></a
                   >
                 </div>
               </div>

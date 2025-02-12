@@ -15,7 +15,7 @@ const modules = [Navigation];
     <div class="mt-10">
       <swiper :slidesPerView="'auto'" :navigation="true" :modules="modules" :spaceBetween="30" class="mySwiper">
         <template v-for="item in data">
-          <swiper-slide class="!w-[250px] min-h-[150px] pb-5 bg-gray-100 rounded-4xl cursor-pointer overflow-hidden border border-gray-200">
+          <swiper-slide class="!w-[250px] min-h-[150px] pb-5 bg-gray-100 rounded-3xl cursor-pointer overflow-hidden border border-gray-200">
             <img :src="item.imageLink" :alt="item.name" class="w-full h-[200px] object-cover" />
             <div class="px-3 mt-3">
               <div class="h-[100px]">

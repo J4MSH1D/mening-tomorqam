@@ -31,7 +31,7 @@ const tabsList = [
     <div class="mt-5 relative z-30">
       <div class="flex gap-x-3">
         <span
-          class="bg-[#ECEDEF] px-4 select-none py-2 rounded-5xl text-gray-400 cursor-pointer transition"
+          class="bg-[#ECEDEF] px-4 select-none py-2 rounded-3xl text-gray-400 cursor-pointer transition"
           v-for="tab in tabsList"
           :class="{ 'bg-black !text-white': tab.value === activeTab }"
           @click="activeTab = tab.value"
@@ -42,8 +42,8 @@ const tabsList = [
     </div>
     <div class="mt-5 relative z-30">
       <swiper :slidesPerView="'auto'" :navigation="true" :modules="modules" :spaceBetween="30" class="mySwiper">
-        <template v-for="link in tabsLinks.find(e => e.value === activeTab)['children']">
-          <swiper-slide class="!w-[250px] min-h-[150px] bg-gray-100 p-4 rounded-4xl cursor-pointer">
+        <template v-for="link in tabsLinks.find((e) => e.value === activeTab)['children']">
+          <swiper-slide class="!h-[150px] max-w-[300px] bg-gray-100 p-4 rounded-3xl cursor-pointer">
             <div class="w-full min-h-[50px] mb-5 flex justify-end items-start">
               <template v-if="link.icon">
                 <div class="w-12 aspect-square rounded-full flex justify-center items-center" :style="{ backgroundColor: link.color }">
