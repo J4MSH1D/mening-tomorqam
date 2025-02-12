@@ -2,7 +2,7 @@
 import { Swiper, SwiperSlide } from "swiper/vue";
 import { Navigation } from "swiper/modules";
 
-const data = [
+const productsList = [
   {
     id: 1,
     title: "Семена томата Pink Parallel",
@@ -116,20 +116,19 @@ const data = [
     <swiper
       :modules="[Navigation]"
       slides-per-view="auto"
+      space-between="20"
       :navigation="{ nextEl: '.localProducts-button-next', prevEl: '.localProducts-button-prev' }"
       class="mt-5"
-      space-between="20"
     >
-      <swiper-slide v-for="item in data" :key="item" class="max-w-[220px] bg-white rounded-xl p-4 my-4 cus-shadow last:(mr-0)">
+      <swiper-slide v-for="item in productsList" :key="item.id" class="list-item max-w-[220px] bg-white rounded-xl p-4 my-4">
         <!-- image -->
-        <router-link :to="`/products/${item.id}`" class="block border border-gray-200 aspect-square bg-gray-200">
+        <router-link to="" class="block border border-gray-200 aspect-square bg-gray-200">
           <img :src="item.image" :alt="item.title" class="w-full h-full object-contain" />
         </router-link>
-
         <!-- title -->
-        <router-link :to="`/products/${item.id}`" class="text-sm text-zinc-900 line-clamp-2 mt-4 h-10">{{ item.title }}</router-link>
+        <router-link to="" class="text-sm text-zinc-900 line-clamp-2 mt-4 h-10">{{ $t(item.title) }}</router-link>
         <!-- product_type -->
-        <span class="text-xs text-zinc-400 line-clamp-2 mt-2 h-8">{{ item.product_type }}</span>
+        <span class="text-xs text-zinc-400 line-clamp-2 mt-2 h-8">{{ $t(item.product_type) }}</span>
         <!-- price -->
         <div class="flex items-center justify-between gap-2 mt-4">
           <div class="relative flex items-center">
@@ -143,10 +142,10 @@ const data = [
 </template>
 
 <style scoped>
-.cus-shadow {
+.list-item {
   transition: all 0.3s linear;
 }
-.cus-shadow:hover {
+.list-item:hover {
   box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
 }
 </style>

@@ -4,9 +4,9 @@
   <ProductsMainBanner />
   <ProductsPopularCategories />
   <ProductsSpecialOffers />
-  <!-- <ProductsLeasingBanner /> -->
-  <!-- <ProductsLocalProducts /> -->
-  <!-- <ProductsPopularBanners /> -->
-  <!-- <ProductsUsefulServices /> -->
-  <!-- <ProductsMediaList /> -->
+  <ProductsLeasingBanner />
+  <ProductsLocalProducts />
+  <ProductsPopularBanners />
+  <ProductsUsefulServices />
+  <ProductsMediaList />
 </template>
