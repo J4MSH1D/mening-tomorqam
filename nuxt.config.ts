@@ -20,8 +20,18 @@ export default defineNuxtConfig({
     dirs: [
       // With prefixes
       {
-        path: "~/components/default",
-        prefix: "Default",
+        path: "~/components/default/home",
+        prefix: "Home",
+        global: true,
+      },
+      {
+        path: "~/components/default/products",
+        prefix: "Products",
+        global: true,
+      },
+      {
+        path: "~/components/default/government-supply",
+        prefix: "GovernmentSupply",
         global: true,
       },
       {
@@ -88,4 +98,6 @@ export default defineNuxtConfig({
   tailwindcss: {
     config: "/tailwind.config.ts",
   },
+
+  // SVGO
 });
