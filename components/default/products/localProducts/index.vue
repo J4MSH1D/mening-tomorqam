@@ -122,7 +122,7 @@ const productsList = [
     >
       <swiper-slide v-for="item in productsList" :key="item.id" class="list-item max-w-[220px] bg-white rounded-xl p-4 my-4">
         <!-- image -->
-        <nuxt-link to="" class="block border border-gray-200 aspect-square bg-gray-200">
+        <nuxt-link :to="$localePath" class="block border border-gray-200 aspect-square bg-gray-200">
           <img :src="item.image" :alt="item.title" class="w-full h-full object-contain" />
         </nuxt-link>
         <!-- title -->

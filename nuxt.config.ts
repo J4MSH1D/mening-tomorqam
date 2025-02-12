@@ -34,6 +34,11 @@ export default defineNuxtConfig({
         prefix: "GovernmentSupply",
         global: true,
       },
+      {
+        path: "~/components/default/home",
+        prefix: "Home",
+        global: true,
+      },
 
       // Global
       {
