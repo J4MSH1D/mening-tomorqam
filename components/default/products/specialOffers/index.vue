@@ -1,5 +1,6 @@
 <script setup>
 import { Navigation } from "swiper/modules";
+import { SwiperSlide, Swiper } from "swiper/vue";
 
 const offersList = [
   {
@@ -95,21 +96,22 @@ function getPercentage(price, price_old) {
 
     <!-- Slider -->
     <swiper
+      :modules="[Navigation]"
       slides-per-view="auto"
       space-between="20"
       :navigation="{ nextEl: '.specialOffers-button-next', prevEl: '.specialOffers-button-prev' }"
       class="mt-5"
     >
-      <swiper-slide v-for="item in offersList" :key="item" class="max-w-[220px] bg-white rounded-xl p-4 hover:(shadow-2xl)">
+      <swiper-slide v-for="item in offersList" :key="item.id" class="list-item max-w-[220px] bg-white rounded-xl p-4 my-4">
         <!-- image -->
-        <router-link :to="`/products/${item.id}`" class="block border border-gray-200 aspect-square">
+        <router-link to="" class="block border border-gray-200 aspect-square">
           <img :src="item.image" :alt="item.title" class="w-full h-full object-contain" />
         </router-link>
 
         <!-- title -->
-        <router-link :to="`/products/${item.id}`" class="block h-10 text-sm text-zinc-900 line-clamp-2 mt-2">{{ item.title }}</router-link>
+        <router-link to="" class="block h-10 text-sm text-zinc-900 line-clamp-2 mt-2">{{ $t(item.title) }}</router-link>
         <!-- product_type -->
-        <span class="h-8 text-xs text-zinc-400 line-clamp-2 mt-2">{{ item.product_type || "-" }}</span>
+        <span class="h-8 text-xs text-zinc-400 line-clamp-2 mt-2">{{ $t(item.product_type) || "-" }}</span>
 
         <!-- price -->
         <div class="h-5 flex items-center justify-between gap-2 mt-4">
@@ -130,3 +132,12 @@ function getPercentage(price, price_old) {
     </swiper>
   </div>
 </template>
+
+<style scoped>
+.list-item {
+  transition: all 0.3s linear;
+}
+.list-item:hover {
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+</style>

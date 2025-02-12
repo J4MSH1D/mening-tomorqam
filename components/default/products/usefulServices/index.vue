@@ -1,6 +1,4 @@
 <script setup>
-import { Swiper, SwiperSlide } from "swiper/vue";
-
 const services = [
   {
     link: "",
@@ -32,13 +30,15 @@ const services = [
 
     <!-- Slider -->
     <ul class="grid grid-cols-4 gap-5 mt-4">
-      <li v-for="item in services" class="list-item rounded-xl bg-white p-4 flex flex-col">
-        <icon :name="item.image" class="w-full h-auto object-contain" />
-        <div class="flex flex-col justify-between gap-8 py-4">
-          <p class="text-xl font-medium h-12">{{ $t(item.title) }}</p>
-          <router-link :to="item.link">
-            <a-button size="large">{{ $t("Видеть") }}</a-button>
-          </router-link>
+      <li v-for="item in services" class="service-list-item flex flex-col rounded-xl bg-white p-4">
+        <icon :name="item.image" class="w-full h-[150px] object-cover" />
+        <div class="flex-grow flex flex-col justify-between gap-8 pt-4">
+          <p class="text-xl font-medium line-clamp-2">{{ $t(item.title) }}</p>
+          <a-button>
+            <router-link :to="item.link" class="inline-block">
+              {{ $t("Смотреть") }}
+            </router-link>
+          </a-button>
         </div>
       </li>
     </ul>
@@ -46,10 +46,10 @@ const services = [
 </template>
 
 <style scoped>
-.list-item {
+.service-list-item {
   transition: 0.2s;
 }
-.list-item:hover {
+.service-list-item:hover {
   box-shadow: 0 5px 8px rgba(128, 128, 128, 0.308);
 }
 </style>

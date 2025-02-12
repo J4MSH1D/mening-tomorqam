@@ -1,3 +1,7 @@
+<script setup>
+import "swiper/css";
+</script>
+
 <template>
   <a-config-provider
     :theme="{

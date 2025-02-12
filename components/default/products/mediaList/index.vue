@@ -4,7 +4,7 @@ import { Navigation } from "swiper/modules";
 
 const mediaList = [
   {
-    id: 41,
+    id: 1,
     name: "EduBrb",
     title: "Проект по выращиванию лимонов",
     date: "03.12.2024",
@@ -13,7 +13,7 @@ const mediaList = [
     link: "https://www.youtube.com/watch?v=HwNdO0gg9es",
   },
   {
-    id: 42,
+    id: 2,
     name: "EduBrb",
     title: "Проект по выращиванию малины",
     date: "03.12.2024",
@@ -22,7 +22,7 @@ const mediaList = [
     link: "https://youtu.be/RLt-WcZLrsE",
   },
   {
-    id: 43,
+    id: 3,
     name: "EduBrb",
     title: "Проект по выращиванию голубики",
     date: "03.12.2024",
@@ -31,9 +31,9 @@ const mediaList = [
     link: "https://youtu.be/3hd7qjupKfI",
   },
   {
-    id: 44,
+    id: 4,
     name: "EduBrb",
-    title: "Проект по выращиванию клубники",
+    title: "Проект по выращиванию клубники gfdsgdf gdgs gdfsgs gfd gfdsgdf gdgs gdfsgs gfd",
     date: "03.12.2024",
     img: "https://i.ytimg.com/vi/vCNmOdnogZc/sddefault.jpg",
     isVideo: true,
@@ -66,9 +66,10 @@ const mediaList = [
       :navigation="{ nextEl: '.mediaList-button-next', prevEl: '.mediaList-button-prev' }"
       class="mt-5"
     >
-      <swiper-slide v-for="item in mediaList" :key="item">
-        <a :href="item.link" target="_blank" class="flex flex-col max-h-[360px] bg-white rounded-xl overflow-hidden hover:(shadow-2xl)">
-          <div class="relative">
+      <swiper-slide v-for="item in mediaList" :key="item.id" class="media-list-item !h-[350px] bg-red-500 rounded-xl overflow-hidden my-5">
+        <a :href="item.link" target="_blank" class="flex flex-col h-full hover:(shadow-2xl)">
+          <!-- media-img -->
+          <div class="relative h-[200px]">
             <img :src="item.img" :alt="item.title" class="w-full h-full object-cover" />
             <icon
               v-if="item.isVideo"
@@ -77,8 +78,8 @@ const mediaList = [
             />
           </div>
           <!-- media-content -->
-          <div class="flex flex-col gap-5 justify-between p-4">
-            <p class="text-md text-zinc-900 line-clamp-3 h-9">{{ $t(item.title) }}</p>
+          <div class="flex flex-grow bg-yellow-500 flex-col justify-between gap-5 p-4">
+            <p class="text-md text-zinc-900 line-clamp-3">{{ $t(item.title) }}</p>
             <span class="text-xs text-zinc-500">{{ item.date }}</span>
           </div>
         </a>
@@ -86,3 +87,12 @@ const mediaList = [
     </swiper>
   </div>
 </template>
+
+<style scoped>
+.media-list-item {
+  transition: 0.2s;
+}
+.media-list-item:hover {
+  box-shadow: 0 5px 8px rgba(128, 128, 128, 0.308);
+}
+</style>

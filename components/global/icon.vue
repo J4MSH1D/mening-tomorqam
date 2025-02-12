@@ -28,6 +28,7 @@ const pathOfImage = computed(() => {
   else return `/images/png/${props.name}`;
 });
 </script>
+
 <template>
   <div :alt="name" v-if="isSvgRaw" v-html="svgRawPath" />
   <img :src="pathOfImage" :alt="name" v-else />

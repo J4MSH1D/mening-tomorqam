@@ -91,4 +91,7 @@ export default defineNuxtConfig({
   tailwindcss: {
     config: "/tailwind.config.ts",
   },
+
+  // SVGO
+
 });

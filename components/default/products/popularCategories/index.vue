@@ -66,18 +66,17 @@ const topCategories = [
 
     <!-- Top categories -->
     <div class="grid grid-cols-3 gap-5 py-6">
-      <div
+      <router-link
         v-for="item in topCategories"
+        to=""
         :key="item.id"
-        class="relative min-h-[240px] rounded-xl overflow-hidden px-4 py-6"
+        class="relative block min-h-[240px] rounded-xl overflow-hidden px-4 py-6"
         :style="{ background: item.background }"
       >
-        <router-link to="">
-          <p class="relative text-2xl text-white font-semibold max-w-[250px]">{{ item.title[locale] }}</p>
-          <icon :name="item.image" alt="" class="absolute h-[80%] right-6 bottom-2" />
-          <icon name="product-category-leaf.png" alt="" class="absolute h-[80%] left-6 bottom-0" />
-        </router-link>
-      </div>
+        <p class="relative text-2xl text-white font-semibold max-w-[250px]">{{ item.title[locale] }}</p>
+        <icon :name="item.image" alt="" class="absolute h-[80%] right-6 bottom-2 z-10" />
+        <icon name="product-category-leaf.png" alt="" class="absolute h-[80%] left-6 bottom-0" />
+      </router-link>
     </div>
   </div>
 </template>
