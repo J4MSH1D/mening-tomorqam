@@ -39,6 +39,21 @@ export default defineNuxtConfig({
         prefix: "Home",
         global: true,
       },
+      {
+        path: "~/components/default/services",
+        prefix: "Services",
+        global: true,
+      },
+      {
+        path: "~/components/default/job",
+        prefix: "Job",
+        global: true,
+      },
+      {
+        path: "~/components/default/media",
+        prefix: "Media",
+        global: true,
+      },
 
       // Global
       {
