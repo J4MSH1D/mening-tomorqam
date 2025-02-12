@@ -44,9 +44,7 @@ const maxAmount = 50000000;
           <!-- Цель кредита -->
           <div class="mt-4">
             <span class="text-xs text-zinc-500">{{ $t("Цель кредита") }}</span>
-            <a-select class="w-full mt-1" v-model:value="filter.purpose" :placeholder="$t('Цель кредита')">
-              <a-select-option v-for="item in 3" :key="item" :value="item">{{ $t(item) }}</a-select-option>
-            </a-select>
+            <a-select class="w-full mt-1" v-model:value="filter.purpose" :placeholder="$t('Цель кредита')"></a-select>
             <!-- Disclaimer -->
             <p class="text-xs text-zinc-500 mt-3">
               * {{ $t("Предложение носит информационный характер и не является публичной офертой. Все расчёты предварительные.") }}

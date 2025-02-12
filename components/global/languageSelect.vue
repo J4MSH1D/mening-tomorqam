@@ -1,5 +1,5 @@
 <script setup>
-const { setLocale } = useI18n();
+const { setLocale, locale } = useI18n();
 
 function changeLanguage(lang) {
   setLocale(lang);
@@ -13,7 +13,7 @@ defineProps({
 <template>
   <a-select
     class="min-w-[110px]"
-    v-model:value="language"
+    v-model:value="locale"
     @change="changeLanguage"
     :size="size"
     :get-popup-container="(trigger) => trigger.parentNode"

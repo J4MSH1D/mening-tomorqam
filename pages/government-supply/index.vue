@@ -14,7 +14,7 @@ provide("filter", filter);
   <GovernmentSupplyMainBanner />
   <GovernmentSupplySupportGoals />
   <GovernmentSupplyCreditParams />
-  <!-- <GovernmentSupplyCreditList /> -->
-  <!-- <GovernmentSupplyCreditSteps /> -->
-  <!-- <GovernmentSupplyApplicationForm /> -->
+  <GovernmentSupplyCreditList />
+  <GovernmentSupplyCreditSteps />
+  <GovernmentSupplyApplicationForm />
 </template>

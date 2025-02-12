@@ -91,7 +91,7 @@ const smallLinks = [
           {
             name: "Оборотный кредит",
             path: "",
-            isSoon: false,
+            isSoon: true,
             isActive: false,
           },
           {

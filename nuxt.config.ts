@@ -3,7 +3,9 @@ export default defineNuxtConfig({
   compatibilityDate: "2024-11-01",
 
   // Devtools
-  devtools: { enabled: true },
+  devtools: {
+    enabled: true,
+  },
 
   // Runtime config
   runtimeConfig: {
@@ -35,8 +37,33 @@ export default defineNuxtConfig({
         global: true,
       },
       {
-        path: "~/components/default/home",
-        prefix: "Home",
+        path: "~/components/default/leasing",
+        prefix: "Leasing",
+        global: true,
+      },
+      {
+        path: "~/components/default/agrotechnology",
+        prefix: "Agrotechnology",
+        global: true,
+      },
+      {
+        path: "~/components/default/announcements",
+        prefix: "Announ",
+        global: true,
+      },
+      {
+        path: "~/components/default/services",
+        prefix: "Services",
+        global: true,
+      },
+      {
+        path: "~/components/default/job",
+        prefix: "Job",
+        global: true,
+      },
+      {
+        path: "~/components/default/media",
+        prefix: "Media",
         global: true,
       },
 

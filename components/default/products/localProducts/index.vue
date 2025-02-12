@@ -126,7 +126,7 @@ const productsList = [
           <img :src="item.image" :alt="item.title" class="w-full h-full object-contain" />
         </nuxt-link>
         <!-- title -->
-        <router-link to="" class="text-sm text-zinc-900 line-clamp-2 mt-4 h-10">{{ $t(item.title) }}</router-link>
+        <nuxt-link to="" class="text-sm text-zinc-900 line-clamp-2 mt-4 h-10">{{ $t(item.title) }}</nuxt-link>
         <!-- product_type -->
         <span class="text-xs text-zinc-400 line-clamp-2 mt-2 h-8">{{ $t(item.product_type) }}</span>
         <!-- price -->

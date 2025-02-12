@@ -104,12 +104,12 @@ function getPercentage(price, price_old) {
     >
       <swiper-slide v-for="item in offersList" :key="item.id" class="list-item max-w-[220px] bg-white rounded-xl p-4 my-4">
         <!-- image -->
-        <router-link to="" class="block border border-gray-200 aspect-square">
+        <nuxt-link to="" class="block border border-gray-200 aspect-square">
           <img :src="item.image" :alt="item.title" class="w-full h-full object-contain" />
-        </router-link>
+        </nuxt-link>
 
         <!-- title -->
-        <router-link to="" class="block h-10 text-sm text-zinc-900 line-clamp-2 mt-2">{{ $t(item.title) }}</router-link>
+        <nuxt-link to="" class="block h-10 text-sm text-zinc-900 line-clamp-2 mt-2">{{ $t(item.title) }}</nuxt-link>
         <!-- product_type -->
         <span class="h-8 text-xs text-zinc-400 line-clamp-2 mt-2">{{ $t(item.product_type) || "-" }}</span>
 

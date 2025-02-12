@@ -8,13 +8,13 @@
         <a-button type="primary" class="">{{ $t("Подписаться") }}</a-button>
       </div>
     </div>
-    <bannerSmall color="#468f46" leafColor="#75d241" cusClass="px-10 py-12" link="https://taibaleasing.com/operativnyj-lizing/">
+    <bannerSmall color="#468f46" leafColor="#75d241" cusDivClass="px-10 py-11" link="https://taibaleasing.com/operativnyj-lizing/">
       <div class="relative flex flex-col gap-10">
         <div class="flex flex-col gap-4 justify-evenly h-full text-white">
           <p class="text-xl">{{ $t("Лизинг Мурабаха") }}</p>
           <p class="text-sm">{{ $t("Получение лизинга на выгодных условиях") }}</p>
         </div>
-        <img src="@/assets/images/png/home_tractor.png" alt="banner image" class="w-40 absolute right-10 -top-8" />
+        <img src="@/public/images/png/home_tractor.png" alt="banner image" class="w-36 absolute right-10 -top-8" />
       </div>
     </bannerSmall>
   </div>
