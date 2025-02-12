@@ -22,6 +22,11 @@ export default defineNuxtConfig({
     dirs: [
       // With prefixes
       {
+        path: "~/components/default/home",
+        prefix: "Home",
+        global: true,
+      },
+      {
         path: "~/components/default/products",
         prefix: "Products",
         global: true,
@@ -44,6 +49,21 @@ export default defineNuxtConfig({
       {
         path: "~/components/default/announcements",
         prefix: "Announ",
+        global: true,
+      },
+      {
+        path: "~/components/default/services",
+        prefix: "Services",
+        global: true,
+      },
+      {
+        path: "~/components/default/job",
+        prefix: "Job",
+        global: true,
+      },
+      {
+        path: "~/components/default/media",
+        prefix: "Media",
         global: true,
       },
 
