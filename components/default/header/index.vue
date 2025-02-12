@@ -8,7 +8,7 @@ const localePath = useLocalePath();
 </script>
 <template>
   <div
-    class="shadowCus sticky top-0 z-100 h-[140px] flex flex-col items-center"
+    class="shadowCus sticky top-0 z-50 h-[140px] flex flex-col items-center"
     :style="{ backgroundImage: `url(${bgHeader})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }"
   >
     <!-- Overlay Black -->

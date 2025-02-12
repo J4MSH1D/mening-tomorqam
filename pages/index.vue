@@ -1,16 +1,16 @@
 <template>
   <div>
-    <!-- <Hero /> -->
-    <!-- <UseLinks /> -->
-    <!-- <Products /> -->
-    <!-- <GovernmentSupport /> -->
-    <!-- <Services /> -->
-    <!-- <StartingBusiness /> -->
-    <!-- <NewInMonth /> -->
-    <!-- <ExtraServices /> -->
-    <!-- <BestOffers /> -->
-    <!-- <YourMedia /> -->
-    <!-- <LizingMurabaxa /> -->
-    <!-- <MapStatistics /> -->
+    <HomeHero />
+    <HomeUseLinks />
+    <!-- <HomeProducts /> -->
+    <!-- <HomeGovernmentSupport /> -->
+    <!-- <HomeServices /> -->
+    <!-- <HomeStartingBusiness /> -->
+    <!-- <HomeNewInMonth /> -->
+    <!-- <HomeExtraServices /> -->
+    <!-- <HomeBestOffers /> -->
+    <!-- <HomeYourMedia /> -->
+    <!-- <HomeLizingMurabaxa /> -->
+    <!-- <HomeMapStatistics /> -->
   </div>
 </template>

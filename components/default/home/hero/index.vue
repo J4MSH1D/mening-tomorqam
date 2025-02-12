@@ -2,6 +2,9 @@
 // Import Swiper Vue.js components
 import { Swiper, SwiperSlide } from "swiper/vue";
 import { Pagination, Autoplay } from "swiper/modules";
+import section1 from "./section1.vue";
+import section2 from "./section2.vue";
+import section4 from "./section4.vue";
 
 const slides = [
   {

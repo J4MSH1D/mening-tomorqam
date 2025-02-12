@@ -29,6 +29,11 @@ export default defineNuxtConfig({
         prefix: "Products",
         global: true,
       },
+      {
+        path: "~/components/default/home",
+        prefix: "Home",
+        global: true,
+      },
 
       // Global
       {
@@ -51,9 +56,6 @@ export default defineNuxtConfig({
       ],
     },
   },
-
-  // Styles
-  css: ["~/public/styles/main.css"],
 
   // Runtime Proxy config
   routeRules: {
@@ -93,5 +95,4 @@ export default defineNuxtConfig({
   },
 
   // SVGO
-
 });
